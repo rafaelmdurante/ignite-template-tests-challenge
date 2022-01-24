@@ -35,7 +35,7 @@ describe('POST /sessions', () => {
                 password: 'admin'
             })
 
-        const jwtPattern = new RegExp(/^[A-Za-z0-9]+\.[A-Za-z0-9]+\.[A-Za-z0-9]+$/)
+        const jwtPattern = new RegExp(/^[A-Za-z0-9\-_]+\.[A-Za-z0-9\-_]+\.[A-Za-z0-9\-_]+$/)
         expect(response).toHaveProperty('status', 200)
         expect(response).toHaveProperty('body')
         expect(response.body).toHaveProperty('token')
